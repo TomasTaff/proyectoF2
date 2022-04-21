@@ -1,0 +1,330 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//paleta de color principal
+$color-principal: rgba(73, 26, 26, 0.233);
+
+/*----------------------HOME-----------------------*/
+
+/*propiedades del padre*/
+.contenedor{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 0.2fr 0.5fr 1fr 1fr 0.3fr;
+    grid-template-areas: "header header" 
+                         "main main"
+                         "section section2"
+                         "section3 aside"
+                         "footer footer" ;
+    gap: 5px;                     
+}
+/*propiedades de las areas*/
+header{
+    grid-area: header;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav{
+    ul{
+        li{
+            display: inline-block;
+            font-size: 20px;
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+            a{
+                text-decoration: none;
+                color: gray;
+            }
+        }
+    }
+}
+
+
+   
+main{
+    grid-area: main;
+    background-color: $color-principal ;
+}
+.mainP{
+       font-size: 25px;
+       text-align: center;
+       font-family: 'Times New Roman', Times, serif;
+}
+   
+section{
+       grid-area: section;
+       background-color: $color-principal;
+}
+   
+.section2{
+       grid-area: section2;
+       background-color: $color-principal;
+}
+   
+.section3{
+       grid-area: section3;
+       background-color: $color-principal;
+}
+.section4{
+       display: none;
+}
+   
+aside{
+       grid-area: aside;
+       background-color: $color-principal;
+}
+   
+footer{
+    grid-area: footer;
+    background-color: whitesmoke;
+    padding-top: 15px;     
+}
+footer p{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/*-------------------CONTACTOS--------------------*/
+
+.contenedorC{
+       height: 100vh;
+       display: grid;
+       grid-template-rows: 0.12fr 0.4fr 1fr  0.2fr;
+       grid-template-areas: "header header header" 
+                            "sectionF sectionF sectionF"
+                            "section section2 section3"
+                            "footer footer footer" ;
+       gap: 3px;                     
+}
+.sectionF{
+       grid-area: sectionF;
+}
+.section3 img{
+       width: 30vh;
+       height: 30vh;
+}
+.section3{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.section2 img{
+       width: 30vh;
+       height: 30vh;
+}
+.section2{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.section img{
+       width: 30vh;
+       height: 30vh;
+}
+.section{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+div section img:hover{
+       transform: scale(1.2);
+       transition: 0.7s;
+}
+
+/*-----------------------SERVICIOS---------------------*/
+.contenedorS{
+       height: 100vh;
+       display: grid;
+       grid-template-rows: 0.17fr 1fr 1fr 0.3fr;
+       grid-template-areas: "header header" 
+                            
+                            "sectionS sectionS2"
+                            "sectionS3 sectionS4"
+                            "footer footer" ;
+       gap: 3px;                     
+}
+
+.sectionS{
+       grid-area: sectionS;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.sectionS2{
+       grid-area: sectionS2;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.sectionS3{
+       grid-area: sectionS3;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.sectionS4{
+       grid-area: sectionS4;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+div section p:hover{
+       transform: scale(1.2);
+       transition: 0.7s;
+}
+div section p{
+       font-size: 25px;
+}
+
+
+
+
+
+
+/*----------------------FOTOS--------------------------*/
+
+.contenedorF{
+       height: 100vh;
+       display: grid;
+       grid-template-rows: 0.3fr 3fr  0.3fr;
+       grid-template-areas: "header header" 
+                            
+                            "Carousel Carousel"
+                     
+                            "footer footer" ;
+       gap: 3px;
+       font-family: 'Times New Roman', Times, serif;
+}
+header h1{
+       font-size: 25px;
+       font-family: 'Times New Roman', Times, serif;
+       font-weight: bold;
+}
+header{
+       display: flex;
+       align-content: center;
+       align-items: center;
+       text-align: center;
+       align-self: center;
+       justify-items: center;
+}
+
+.sectionF{
+       grid-area: sectionF;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.sectionF2{
+       grid-area: sectionF2;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+.sectionF3{
+       display: none;
+}
+.Carousel{
+       grid-area: Carousel;
+}
+
+/*-------------------SOBRE NOSOTROS--------------------*/
+
+.contenedorSN{
+       height: 100vh;
+       display: grid;
+       grid-template-rows: 0.2fr 2.3fr 0.3fr;
+       grid-template-areas: "header header" 
+                            
+                            "sectionSN sectionSN"
+                            "sectionSN sectionSN"
+                            "footer footer" ;
+       gap: 3px;                     
+}
+.sectionSN{
+       grid-area: sectionSN;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+}
+
+/*-----------------Media Queries-----------------*/
+@media only screen and (max-width:650px){
+       header h1{
+              font-size: 17px;
+       }
+       header nav ul li{
+              font-size: 15px;
+       }
+       /*---Home---*/
+       .mainP{
+              font-size: 20px;
+       }
+       /*--Contactos--*/
+       .section3 img{
+              width: 15vh;
+              height: 15vh;
+       }
+       .section2 img{
+              width: 15vh;
+              height: 15vh;
+       }
+       .section img{
+              width: 15vh;
+              height: 15vh;
+       }
+       /*---Fotos---*/
+       .Carousel{
+              padding-top: 90px;
+       }
+}
+@media only screen and (min-width:1000px){
+       .contenedor{
+              height: 100vh;
+              display: grid;
+              grid-template-rows: 0.2fr 0.5fr 1fr 1fr 0.3fr;
+              grid-template-areas: "header header header" 
+                                   "main main main"
+                                   "section section2 aside"
+                                   "section3 section4 aside"
+                                   "footer footer footer" ;
+              gap: 5px;                     
+       }
+       .section4{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              grid-area: section4;
+       }
+
+       /*----Fotos----*/
+       .contenedorF{
+              height: 100vh;
+              display: grid;
+              grid-template-rows: 0.3fr 2.5fr  0.3fr;
+              grid-template-areas: "header header header" 
+                                   
+                                   "Carousel Carousel Carousel"
+                            
+                                   "footer footer footer" ;
+              gap: 3px;
+       }
+       .sectionF3{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              grid-area: sectionF3;
+       }
+}
+
+
