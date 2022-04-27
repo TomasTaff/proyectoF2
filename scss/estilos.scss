@@ -4,8 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+//mixin
+@mixin size ($width, $height){
+       width: $width;
+       height: $height;
+}
+@mixin flex {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
 //paleta de color principal
 $color-principal: rgba(73, 26, 26, 0.233);
+
+//Mapas
+$font: (
+       fontColor: black,
+       fontSize: 25px,
+);
+
+//extends
+%hover{
+       transform: scale(1.2);
+       transition: 0.7s;
+}
 
 /*----------------------HOME-----------------------*/
 
@@ -52,7 +74,8 @@ main{
     background-color: $color-principal ;
 }
 .mainP{
-       font-size: 25px;
+       font-size: map-get($map: $font, $key: fontSize);
+       color: map-get($map: $font, $key: fontColor);
        text-align: center;
        font-family: 'Times New Roman', Times, serif;
 }
@@ -109,35 +132,26 @@ footer p{
        grid-area: sectionF;
 }
 .section3 img{
-       width: 30vh;
-       height: 30vh;
+       @include size (30vh,30vh );
 }
 .section3{
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .section2 img{
-       width: 30vh;
-       height: 30vh;
+       @include size (30vh,30vh );
+       
 }
 .section2{
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .section img{
-       width: 30vh;
-       height: 30vh;
+       @include size (30vh,30vh );
 }
 .section{
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 div section img:hover{
-       transform: scale(1.2);
-       transition: 0.7s;
+       @extend %hover
 }
 
 /*-----------------------SERVICIOS---------------------*/
@@ -155,34 +169,27 @@ div section img:hover{
 
 .sectionS{
        grid-area: sectionS;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .sectionS2{
        grid-area: sectionS2;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .sectionS3{
        grid-area: sectionS3;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .sectionS4{
        grid-area: sectionS4;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 div section p:hover{
        transform: scale(1.2);
        transition: 0.7s;
 }
 div section p{
-       font-size: 25px;
+       font-size: map-get($map: $font, $key: fontSize);
+       color: map-get($map: $font, $key: fontColor);
 }
 
 
@@ -205,7 +212,8 @@ div section p{
        font-family: 'Times New Roman', Times, serif;
 }
 header h1{
-       font-size: 25px;
+       font-size: map-get($map: $font, $key: fontSize);
+       color: map-get($map: $font, $key: fontColor);
        font-family: 'Times New Roman', Times, serif;
        font-weight: bold;
 }
@@ -220,15 +228,11 @@ header{
 
 .sectionF{
        grid-area: sectionF;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .sectionF2{
        grid-area: sectionF2;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
 }
 .sectionF3{
        display: none;
@@ -252,9 +256,7 @@ header{
 }
 .sectionSN{
        grid-area: sectionSN;
-       display: flex;
-       justify-content: center;
-       align-items: center;
+       @include flex;
        text-align: center;
 }
 
@@ -272,16 +274,13 @@ header{
        }
        /*--Contactos--*/
        .section3 img{
-              width: 15vh;
-              height: 15vh;
+              @include size(15vh, 15vh )
        }
        .section2 img{
-              width: 15vh;
-              height: 15vh;
+              @include size(15vh, 15vh )
        }
        .section img{
-              width: 15vh;
-              height: 15vh;
+              @include size(15vh, 15vh )
        }
        /*---Fotos---*/
        .Carousel{
@@ -301,9 +300,7 @@ header{
               gap: 5px;                     
        }
        .section4{
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include flex;
               grid-area: section4;
        }
 
@@ -320,9 +317,7 @@ header{
               gap: 3px;
        }
        .sectionF3{
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include flex;
               grid-area: sectionF3;
        }
 }
