@@ -50,6 +50,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 20px;
 }
 nav{
     ul{
@@ -83,19 +84,46 @@ main{
 section{
        grid-area: section;
        background-color: $color-principal;
+       @include flex;
+       img{
+              max-width: 540px;
+              max-height: 300px;
+              @include size (100%, 100% );  
+              object-fit: cover;
+       }
 }
    
 .section2{
        grid-area: section2;
        background-color: $color-principal;
+       @include flex;
+       img{
+              max-width: 540px;
+              max-height: 300px;
+              @include size (100%, 100% );  
+              object-fit: cover;
+       }
 }
    
 .section3{
        grid-area: section3;
        background-color: $color-principal;
+       @include flex;
+       img{
+              max-width: 540px;
+              max-height: 300px;
+              @include size (100%, 100% );  
+              object-fit: cover;
+       }
 }
 .section4{
        display: none;
+       img{
+              max-width: 540px;
+              max-height: 300px;
+              @include size (100%, 100% );  
+              object-fit: cover;
+       }
 }
    
 aside{
@@ -124,37 +152,41 @@ footer p{
        grid-template-rows: 0.12fr 0.4fr 1fr  0.2fr;
        grid-template-areas: "header header header" 
                             "sectionF sectionF sectionF"
-                            "section section2 section3"
+                            "sectionC section2C section3C"
                             "footer footer footer" ;
        gap: 3px;                     
 }
 .sectionF{
        grid-area: sectionF;
 }
-.section3 img{
-       @include size (30vh,30vh );
+.section3C img{
+       @include size (30vh, 30vh );
 }
-.section3{
+.section3C{
+       grid-area: section3C;
        @include flex;
 }
-.section2 img{
+.section2C img{
        @include size (30vh,30vh );
        
 }
-.section2{
+.section2C{
+       grid-area: section2C;
        @include flex;
 }
-.section img{
-       @include size (30vh,30vh );
+.sectionC img{
+       @include size (30vh, 30vh );
 }
-.section{
+.sectionC{
+       grid-area: sectionC;
        @include flex;
 }
-div section img:hover{
-       @extend %hover
+div section a:hover{
+       transform: scale(1.2);
+       transition: 0.7s;
 }
 
-/*-----------------------SERVICIOS---------------------*/
+/*----------------------SERVICIOS---------------------*/
 .contenedorS{
        height: 100vh;
        display: grid;
@@ -164,29 +196,96 @@ div section img:hover{
                             "sectionS sectionS2"
                             "sectionS3 sectionS4"
                             "footer footer" ;
-       gap: 3px;                     
+       grid-gap: 3px;
+       background-color: white;                     
 }
 
 .sectionS{
        grid-area: sectionS;
-       @include flex;
+       position: relative;
+       display: inline-block;
+       text-align: center;
+       p{
+              color: white;
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);  
+       }
+       img{
+              max-width: 640px;
+              max-height: 440px;
+              @include size (100%, 100% );  
+              object-fit: cover;
+       }
 }
+
 .sectionS2{
        grid-area: sectionS2;
-       @include flex;
+       position: relative;
+       display: inline-block;
+       text-align: center;
+       p{
+              color: white;
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);  
+       }
+       img{
+              max-width: 640px;
+              max-height: 440px;
+              @include size (100%,100% ); 
+              object-fit: cover; 
+       }
 }
 .sectionS3{
        grid-area: sectionS3;
-       @include flex;
+       position: relative;
+       display: inline-block;
+       text-align: center;
+       p{
+              color: white;
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);  
+       }
+       img{
+              max-width: 640px;
+              max-height: 440px;
+              @include size (100%,100%);  
+              object-fit: cover;
+       }
 }
 .sectionS4{
        grid-area: sectionS4;
-       @include flex;
+       position: relative;
+       display: inline-block;
+       text-align: center;
+       p{
+              color: white;
+              position: absolute;
+              top: 10px;
+              left: 10px; 
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); 
+       }
+       img{
+              max-width: 640px;
+              max-height: 440px;
+              @include size (100%,100% );  
+              object-fit: cover;
+       }
 }
-div section p:hover{
-       transform: scale(1.2);
-       transition: 0.7s;
-}
+
 div section p{
        font-size: map-get($map: $font, $key: fontSize);
        color: map-get($map: $font, $key: fontColor);
@@ -202,13 +301,12 @@ div section p{
 .contenedorF{
        height: 100vh;
        display: grid;
-       grid-template-rows: 0.3fr 3fr  0.3fr;
+       grid-template-rows: 0.2fr 3fr  0.3fr;
        grid-template-areas: "header header" 
                             
                             "Carousel Carousel"
                      
                             "footer footer" ;
-       gap: 3px;
        font-family: 'Times New Roman', Times, serif;
 }
 header h1{
@@ -224,6 +322,7 @@ header{
        text-align: center;
        align-self: center;
        justify-items: center;
+       
 }
 
 .sectionF{
@@ -252,12 +351,20 @@ header{
                             "sectionSN sectionSN"
                             "sectionSN sectionSN"
                             "footer footer" ;
-       gap: 3px;                     
+       gap: 3px;  
+       background-color: $color-principal;                   
 }
 .sectionSN{
        grid-area: sectionSN;
-       @include flex;
        text-align: center;
+       width: 60%;
+       display: flex;
+       flex-direction: column;
+       margin: 50px auto;
+       text-align: center;
+       padding: 30px;
+       background-color: whitesmoke;
+       
 }
 
 /*-----------------Media Queries-----------------*/
@@ -273,25 +380,28 @@ header{
               font-size: 20px;
        }
        /*--Contactos--*/
-       .section3 img{
+       .section3C img{
               @include size(15vh, 15vh )
        }
-       .section2 img{
+       .section2C img{
               @include size(15vh, 15vh )
        }
-       .section img{
+       .sectionC img{
               @include size(15vh, 15vh )
        }
        /*---Fotos---*/
        .Carousel{
-              padding-top: 90px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
        }
+       
 }
 @media only screen and (min-width:1000px){
        .contenedor{
               height: 100vh;
               display: grid;
-              grid-template-rows: 0.2fr 0.5fr 1fr 1fr 0.3fr;
+              grid-template-rows: 0.2fr 0.5fr 1fr 1fr 0.5fr;
               grid-template-areas: "header header header" 
                                    "main main main"
                                    "section section2 aside"
@@ -308,13 +418,12 @@ header{
        .contenedorF{
               height: 100vh;
               display: grid;
-              grid-template-rows: 0.3fr 2.5fr  0.3fr;
+              grid-template-rows: 0.3fr 3fr  0.2fr;
               grid-template-areas: "header header header" 
                                    
                                    "Carousel Carousel Carousel"
                             
                                    "footer footer footer" ;
-              gap: 3px;
        }
        .sectionF3{
               @include flex;
