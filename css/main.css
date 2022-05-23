@@ -1,7 +1,13 @@
+/*-------GENERAL-------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
+
+.Logo {
+  width: 150px;
+  height: 150px;
+  margin: -40px; }
 
 /*----------------------HOME-----------------------*/
 /*propiedades del padre*/
@@ -21,15 +27,21 @@ header {
   align-items: center;
   padding: 20px; }
 
-nav ul li {
-  display: inline-block;
-  font-size: 20px;
-  list-style: none;
-  margin-left: 10px;
-  margin-right: 10px; }
-  nav ul li a {
-    text-decoration: none;
-    color: gray; }
+nav {
+  height: 60px;
+  text-align: center; }
+  nav ul {
+    list-style: none;
+    display: inline-block; }
+    nav ul li {
+      float: left;
+      margin-top: 20px; }
+      nav ul li a {
+        color: gray;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 18px; }
 
 main {
   grid-area: main;
@@ -39,7 +51,8 @@ main {
   font-size: 25px;
   color: black;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif; }
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px; }
 
 section {
   grid-area: section;
@@ -110,14 +123,14 @@ footer p {
   display: grid;
   grid-template-rows: 0.12fr 0.4fr 1fr  0.2fr;
   grid-template-areas: "header header header"  "sectionF sectionF sectionF" "sectionC section2C section3C" "footer footer footer";
-  gap: 3px; }
+  gap: 5px; }
 
 .sectionF {
   grid-area: sectionF; }
 
 .section3C img {
-  width: 30vh;
-  height: 30vh; }
+  width: 19vh;
+  height: 19vh; }
 
 .section3C {
   grid-area: section3C;
@@ -126,8 +139,8 @@ footer p {
   align-items: center; }
 
 .section2C img {
-  width: 30vh;
-  height: 30vh; }
+  width: 19vh;
+  height: 19vh; }
 
 .section2C {
   grid-area: section2C;
@@ -136,8 +149,8 @@ footer p {
   align-items: center; }
 
 .sectionC img {
-  width: 30vh;
-  height: 30vh; }
+  width: 19vh;
+  height: 19vh; }
 
 .sectionC {
   grid-area: sectionC;
@@ -155,7 +168,7 @@ div section a:hover {
   display: grid;
   grid-template-rows: 0.17fr 1fr 1fr 0.3fr;
   grid-template-areas: "header header"   "sectionS sectionS2" "sectionS3 sectionS4" "footer footer";
-  grid-gap: 3px;
+  grid-gap: 5px;
   background-color: white; }
 
 .sectionS {
@@ -172,8 +185,8 @@ div section a:hover {
     left: 50%;
     transform: translate(-50%, -50%); }
   .sectionS img {
-    max-width: 640px;
-    max-height: 440px;
+    max-width: 740px;
+    max-height: 490px;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -192,8 +205,8 @@ div section a:hover {
     left: 50%;
     transform: translate(-50%, -50%); }
   .sectionS2 img {
-    max-width: 640px;
-    max-height: 440px;
+    max-width: 740px;
+    max-height: 490px;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -212,8 +225,8 @@ div section a:hover {
     left: 50%;
     transform: translate(-50%, -50%); }
   .sectionS3 img {
-    max-width: 640px;
-    max-height: 440px;
+    max-width: 740px;
+    max-height: 490px;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -232,8 +245,8 @@ div section a:hover {
     left: 50%;
     transform: translate(-50%, -50%); }
   .sectionS4 img {
-    max-width: 640px;
-    max-height: 440px;
+    max-width: 740px;
+    max-height: 490px;
     width: 100%;
     height: 100%;
     object-fit: cover; }
@@ -250,34 +263,11 @@ div section p {
   grid-template-areas: "header header"   "Carousel Carousel"  "footer footer";
   font-family: 'Times New Roman', Times, serif; }
 
-header h1 {
-  font-size: 25px;
-  color: black;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold; }
-
 header {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  align-self: center;
-  justify-items: center; }
+  grid-area: header; }
 
-.sectionF {
-  grid-area: sectionF;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.sectionF2 {
-  grid-area: sectionF2;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.sectionF3 {
-  display: none; }
+header ul li a:hover {
+  color: black; }
 
 .Carousel {
   grid-area: Carousel; }
@@ -288,7 +278,6 @@ header {
   display: grid;
   grid-template-rows: 0.2fr 2.3fr 0.3fr;
   grid-template-areas: "header header"   "sectionSN sectionSN" "sectionSN sectionSN" "footer footer";
-  gap: 3px;
   background-color: rgba(73, 26, 26, 0.233); }
 
 .sectionSN {
@@ -304,13 +293,14 @@ header {
 
 /*-----------------Media Queries-----------------*/
 @media only screen and (max-width: 650px) {
-  header h1 {
-    font-size: 17px; }
-  header nav ul li {
-    font-size: 15px; }
+  .Logo {
+    width: 95px;
+    height: 95px; }
+  header nav ul li a {
+    font-size: 12px; }
   /*---Home---*/
   .mainP {
-    font-size: 20px; }
+    font-size: 17px; }
   /*--Contactos--*/
   .section3C img {
     width: 15vh;
@@ -325,7 +315,14 @@ header {
   .Carousel {
     display: flex;
     justify-content: center;
-    align-items: center; } }
+    align-items: center; }
+  /*---SOBRE_NOSOTROS---*/
+  .sectionSN .titulo {
+    font-size: 25px;
+    padding-bottom: 29px; }
+  .sectionSN .parrafo {
+    font-size: 20px;
+    padding-bottom: 17px; } }
 
 @media only screen and (min-width: 1000px) {
   .contenedor {
@@ -334,11 +331,23 @@ header {
     grid-template-rows: 0.2fr 0.5fr 1fr 1fr 0.5fr;
     grid-template-areas: "header header header"  "main main main" "section section2 aside" "section3 section4 aside" "footer footer footer";
     gap: 5px; }
+  header nav ul li a {
+    font-size: 21px; }
   .section4 {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-area: section4; }
+  /*--Contactos--*/
+  .section3C img {
+    width: 23vh;
+    height: 23vh; }
+  .section2C img {
+    width: 23vh;
+    height: 23vh; }
+  .sectionC img {
+    width: 23vh;
+    height: 23vh; }
   /*----Fotos----*/
   .contenedorF {
     height: 100vh;

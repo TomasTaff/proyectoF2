@@ -1,9 +1,15 @@
-
+/*-------GENERAL-------*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.Logo{
+       width: 150px;
+       height: 150px;
+       margin: -40px;
+}
+
 //mixin
 @mixin size ($width, $height){
        width: $width;
@@ -29,6 +35,7 @@ $font: (
        transition: 0.7s;
 }
 
+
 /*----------------------HOME-----------------------*/
 
 /*propiedades del padre*/
@@ -51,21 +58,27 @@ header{
     justify-content: space-around;
     align-items: center;
     padding: 20px;
+    
 }
 nav{
+       height: 60px;
+       text-align: center;
     ul{
-        li{
-            display: inline-block;
-            font-size: 20px;
-            list-style: none;
-            margin-left: 10px;
-            margin-right: 10px;
-            a{
-                text-decoration: none;
-                color: gray;
-            }
-        }
-    }
+           list-style: none;
+           display: inline-block;
+           li{
+               float: left;
+               margin-top: 20px;
+                   a{
+                        color: gray;
+                        font-weight: bold;
+                        text-decoration: none;
+                        font-size: 17px;
+                        padding: 18px;
+
+                     }
+              }
+       }
 }
 
 
@@ -73,12 +86,14 @@ nav{
 main{
     grid-area: main;
     background-color: $color-principal ;
+    
 }
 .mainP{
        font-size: map-get($map: $font, $key: fontSize);
        color: map-get($map: $font, $key: fontColor);
        text-align: center;
        font-family: 'Times New Roman', Times, serif;
+       padding: 20px;
 }
    
 section{
@@ -154,20 +169,20 @@ footer p{
                             "sectionF sectionF sectionF"
                             "sectionC section2C section3C"
                             "footer footer footer" ;
-       gap: 3px;                     
+       gap: 5px;                     
 }
 .sectionF{
        grid-area: sectionF;
 }
 .section3C img{
-       @include size (30vh, 30vh );
+       @include size (19vh, 19vh );
 }
 .section3C{
        grid-area: section3C;
        @include flex;
 }
 .section2C img{
-       @include size (30vh,30vh );
+       @include size (19vh,19vh );
        
 }
 .section2C{
@@ -175,7 +190,7 @@ footer p{
        @include flex;
 }
 .sectionC img{
-       @include size (30vh, 30vh );
+       @include size (19vh, 19vh );
 }
 .sectionC{
        grid-area: sectionC;
@@ -196,7 +211,7 @@ div section a:hover{
                             "sectionS sectionS2"
                             "sectionS3 sectionS4"
                             "footer footer" ;
-       grid-gap: 3px;
+       grid-gap: 5px;
        background-color: white;                     
 }
 
@@ -215,8 +230,8 @@ div section a:hover{
               transform: translate(-50%, -50%);  
        }
        img{
-              max-width: 640px;
-              max-height: 440px;
+              max-width: 740px;
+              max-height: 490px;
               @include size (100%, 100% );  
               object-fit: cover;
        }
@@ -237,8 +252,8 @@ div section a:hover{
               transform: translate(-50%, -50%);  
        }
        img{
-              max-width: 640px;
-              max-height: 440px;
+              max-width: 740px;
+              max-height: 490px;
               @include size (100%,100% ); 
               object-fit: cover; 
        }
@@ -258,8 +273,8 @@ div section a:hover{
               transform: translate(-50%, -50%);  
        }
        img{
-              max-width: 640px;
-              max-height: 440px;
+              max-width: 740px;
+              max-height: 490px;
               @include size (100%,100%);  
               object-fit: cover;
        }
@@ -279,8 +294,8 @@ div section a:hover{
               transform: translate(-50%, -50%); 
        }
        img{
-              max-width: 640px;
-              max-height: 440px;
+              max-width: 740px;
+              max-height: 490px;
               @include size (100%,100% );  
               object-fit: cover;
        }
@@ -309,33 +324,15 @@ div section p{
                             "footer footer" ;
        font-family: 'Times New Roman', Times, serif;
 }
-header h1{
-       font-size: map-get($map: $font, $key: fontSize);
-       color: map-get($map: $font, $key: fontColor);
-       font-family: 'Times New Roman', Times, serif;
-       font-weight: bold;
-}
+
 header{
-       display: flex;
-       align-content: center;
-       align-items: center;
-       text-align: center;
-       align-self: center;
-       justify-items: center;
-       
+       grid-area: header;         
+}
+header ul li a:hover{
+       color: black;
 }
 
-.sectionF{
-       grid-area: sectionF;
-       @include flex;
-}
-.sectionF2{
-       grid-area: sectionF2;
-       @include flex;
-}
-.sectionF3{
-       display: none;
-}
+
 .Carousel{
        grid-area: Carousel;
 }
@@ -350,8 +347,7 @@ header{
                             
                             "sectionSN sectionSN"
                             "sectionSN sectionSN"
-                            "footer footer" ;
-       gap: 3px;  
+                            "footer footer" ; 
        background-color: $color-principal;                   
 }
 .sectionSN{
@@ -369,15 +365,16 @@ header{
 
 /*-----------------Media Queries-----------------*/
 @media only screen and (max-width:650px){
-       header h1{
-              font-size: 17px;
+       .Logo{
+              width: 95px;
+              height: 95px;
        }
-       header nav ul li{
-              font-size: 15px;
+       header nav ul li a{
+              font-size: 12px;
        }
        /*---Home---*/
        .mainP{
-              font-size: 20px;
+              font-size: 17px;
        }
        /*--Contactos--*/
        .section3C img{
@@ -395,6 +392,16 @@ header{
               justify-content: center;
               align-items: center;
        }
+       /*---SOBRE_NOSOTROS---*/
+       .sectionSN .titulo{
+              font-size: 25px;
+              padding-bottom: 29px;
+       }
+       .sectionSN .parrafo{
+              font-size: 20px;
+              padding-bottom: 17px;
+       }
+
        
 }
 @media only screen and (min-width:1000px){
@@ -409,9 +416,24 @@ header{
                                    "footer footer footer" ;
               gap: 5px;                     
        }
+       header nav ul li a{
+              font-size: 21px;
+       }
+
        .section4{
               @include flex;
               grid-area: section4;
+       }
+
+       /*--Contactos--*/
+       .section3C img{
+              @include size(23vh, 23vh )
+       }
+       .section2C img{
+              @include size(23vh, 23vh )
+       }
+       .sectionC img{
+              @include size(23vh, 23vh )
        }
 
        /*----Fotos----*/
